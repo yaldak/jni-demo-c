@@ -6,9 +6,9 @@
 
 #include <jni.h>
 #include <stdio.h>
-#include "cc_kako_examples_jni_Main.h"
+#include "cc_kako_examples_jni_NativeSampler.h"
 
-JNIEXPORT void JNICALL Java_cc_kako_examples_jni_Main_nativePrint
+JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativePrint
         (JNIEnv *env, jobject obj)
 {
 
