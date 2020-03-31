@@ -9,14 +9,6 @@ extern "C" {
 #endif
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeMethodWithArguments
- * Signature: (II)V
- */
-JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeMethodWithArguments
-  (JNIEnv *, jclass, jint, jint);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
  * Method:    nativePrint
  * Signature: ()V
  */
@@ -33,122 +25,10 @@ JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeString
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeBoolean
- * Signature: ()Z
- */
-JNIEXPORT jboolean JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeBoolean
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeBooleanBoxed
- * Signature: ()Ljava/lang/Boolean;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeBooleanBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeChar
- * Signature: ()C
- */
-JNIEXPORT jchar JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeChar
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeCharBoxed
- * Signature: ()Ljava/lang/Character;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeCharBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
  * Method:    nativeInt
  * Signature: ()I
  */
 JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeInt
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeIntBoxed
- * Signature: ()Ljava/lang/Integer;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeLong
- * Signature: ()J
- */
-JNIEXPORT jlong JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeLong
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeLongBoxed
- * Signature: ()Ljava/lang/Long;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeLongBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeShort
- * Signature: ()S
- */
-JNIEXPORT jshort JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeShort
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeShortBoxed
- * Signature: ()Ljava/lang/Short;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeShortBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeDouble
- * Signature: ()D
- */
-JNIEXPORT jdouble JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeDouble
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeDoubleBoxed
- * Signature: ()Ljava/lang/Double;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeDoubleBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeFloat
- * Signature: ()F
- */
-JNIEXPORT jfloat JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeFloat
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeFloatBoxed
- * Signature: ()Ljava/lang/Float;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeFloatBoxed
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeNull
- * Signature: ()Ljava/lang/Object;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeNull
   (JNIEnv *, jclass);
 
 /*
@@ -161,42 +41,42 @@ JNIEXPORT jintArray JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntArr
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeIntArray2D
- * Signature: ()[[I
+ * Method:    nativeIntegerObject
+ * Signature: ()Ljava/lang/Integer;
  */
-JNIEXPORT jobjectArray JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntArray2D
+JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntegerObject
   (JNIEnv *, jclass);
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeCharArray
- * Signature: ()[C
+ * Method:    nativeRotateString
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jcharArray JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeCharArray
-  (JNIEnv *, jclass);
+JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateString
+  (JNIEnv *, jclass, jstring);
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeStringList
- * Signature: ()Ljava/util/List;
+ * Method:    nativeArraySumParallel
+ * Signature: ([I)I
  */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeStringList
-  (JNIEnv *, jclass);
+JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeArraySumParallel
+  (JNIEnv *, jclass, jintArray);
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeStringMap
- * Signature: ()Ljava/util/Map;
- */
-JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeStringMap
-  (JNIEnv *, jclass);
-
-/*
- * Class:     cc_kako_examples_jni_NativeSampler
- * Method:    nativeException
+ * Method:    nativeOpenGLTriangle
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeException
+JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeOpenGLTriangle
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     cc_kako_examples_jni_NativeSampler
+ * Method:    nativeRaiseException
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRaiseException
   (JNIEnv *, jclass);
 
 #ifdef __cplusplus
