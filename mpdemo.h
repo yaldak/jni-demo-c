@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-int sum_array_parallel(int[], int)
+int sum_array_parallel(int[], int);
 
 #ifdef __cplusplus
 }
