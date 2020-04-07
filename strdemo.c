@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <string.h>
 
+/* Inspired by K&R solution */
 char* strrev(char* s) {
     assert(s != NULL);
     

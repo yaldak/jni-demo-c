@@ -1,15 +1,13 @@
 #include <stdio.h>
 
 #ifdef __APPLE__
-/* Defined before OpenGL and GLUT includes to avoid deprecation messages */
+/* Defined before OpenGL includes to avoid deprecation messages */
 #define GL_SILENCE_DEPRECATION
 #include <OpenGL/gl.h>
 #else
 #include <GL/gl.h>
 #endif
 
-/* Ask for an OpenGL Core Context */
-//#define GLFW_INCLUDE_GLCOREARB
 #include <GLFW/glfw3.h>
 
 void error_callback(int error, const char* description) {
@@ -21,12 +19,12 @@ void gldemo_draw() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     glBegin(GL_TRIANGLES);
-    glColor3f(1, 0, 0); // red
-    glVertex2f(-0.8, -0.8);
-    glColor3f(0, 1, 0); // green
+    glColor3f(1, 0, 0); /* Red */
     glVertex2f(0.8, -0.8);
-    glColor3f(0, 0, 1); // blue
+    glColor3f(0, 1, 0); /* Green */
     glVertex2f(0, 0.9);
+    glColor3f(0, 0, 1); /* Blue */
+    glVertex2f(-0.8, -0.8);
     glEnd();
 }
 
@@ -47,12 +45,8 @@ void gldemo_run() {
     GLFWwindow* window;
 
 #ifdef __APPLE__
-    /* We need to explicitly ask for a 3.2 context on OS X */
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-    //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_FALSE);
 #endif
 
     window = glfwCreateWindow(640, 480, "JNI OpenGL Demo", NULL, NULL);

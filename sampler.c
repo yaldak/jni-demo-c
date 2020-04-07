@@ -33,22 +33,22 @@ JNIEXPORT jintArray JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntArr
 (JNIEnv *env, jclass clazz) {
     int size = 10;
 
-    jintArray result = (*env)->NewIntArray(env, size);
-    if (NULL == result) {
-        /* out of memory error thrown */
+    jintArray dest = (*env)->NewIntArray(env, size);
+    if (NULL == dest) {
+        /* Returns NULL if JVM cannot allocate space (out of memory) */
         return NULL;
     }
 
-    // fill a temp structure to use to populate the java int array
-    jint fill[size];
+    /* Fill a structure for the new array (traditional C-style) */
+    jint src[size];
     for (int i = 0; i < size; i++) {
-        // put whatever logic you want to populate the values here.
-        fill[i] = i;
+        src[i] = i;
     }
 
-    // move from the temp structure to the java structure
-    (*env)->SetIntArrayRegion(env, result, 0, size, fill);
-    return result;
+    /* Transfer the JVM array's reference */
+    (*env)->SetIntArrayRegion(env, dest, 0, size, src);
+    
+    return dest;
 }
 
 JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntegerObject
@@ -69,6 +69,7 @@ JNIEXPORT jobject JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeIntegerO
 
 JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateString
   (JNIEnv *env, jclass clazz, jstring input) {
+    /* Acquire Java String argument ("input") as C char array */
     const char *inputstr = (*env)->GetStringUTFChars(env, input, NULL);
     
     if (NULL == inputstr) {
@@ -81,14 +82,17 @@ JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateSt
 
     jstring result = (*env)->NewStringUTF(env, transformed);
     
-    // Free transformed? inputstr?
+    /* Release "input" */
+    (*env)->ReleaseStringUTFChars(env, input, inputstr);
 
     return result;
 }
 
 JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeArraySumParallel
   (JNIEnv *env, jclass clazz, jintArray values) {
-    return 55;
+    //return 55;
+    int a[16] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+    return sum_array_parallel(a, 4);
 }
 
 JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeOpenGLTriangle
@@ -101,3 +105,4 @@ JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRaiseExcept
     jclass Exception = (*env)->FindClass(env, "java/lang/Exception");
     (*env)->ThrowNew(env, Exception, "Exception from C.");
 }
+
