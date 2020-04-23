@@ -90,20 +90,9 @@ JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateSt
 }
 
 JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeArraySumParallel
-  (JNIEnv *env, jclass clazz, jintArray values) {
-    jsize len = (*env)->GetArrayLength(env, values);
-
-    int* cValues = (int*)malloc(len * sizeof(int));
-    
-    /* GetIntArrayElements() guarantees GC will not destroy this array until released */
-    /* Consider Get/Set ArrayRegion for larger arrays */
-    jint* jValues = (*env)->GetIntArrayElements(env, values, 0);
-    for (int i = 0; i < len; i++) {
-        cValues[i] = jValues[i];
-    }
-    (*env)->ReleaseIntArrayElements(env, jValues, cValues, 0);
-    
-    return sum_array_parallel(cValues);
+  (JNIEnv *env, jclass clazz) {
+    int a[16] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+    return sum_array_parallel(a, 4);
 }
 
 JNIEXPORT void JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeOpenGLTriangle

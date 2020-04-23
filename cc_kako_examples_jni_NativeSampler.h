@@ -61,7 +61,7 @@ JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateSt
  * Signature: ([I)I
  */
 JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeArraySumParallel
-  (JNIEnv *, jclass, jintArray);
+  (JNIEnv *, jclass);
 
 /*
  * Class:     cc_kako_examples_jni_NativeSampler
