@@ -6,7 +6,8 @@ char* strrev(char* s) {
     assert(s != NULL);
     
     int len = strlen(s);
-    int c, i, j;
+    char c;
+    int i, j;
     
     for (i = 0, j = len - 1; i < j; i++, j--) {
         c = s[i];
