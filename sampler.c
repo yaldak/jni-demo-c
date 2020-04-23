@@ -90,7 +90,6 @@ JNIEXPORT jstring JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeRotateSt
 
 JNIEXPORT jint JNICALL Java_cc_kako_examples_jni_NativeSampler_nativeArraySumParallel
   (JNIEnv *env, jclass clazz, jintArray values) {
-    //return 55;
     int a[16] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
     return sum_array_parallel(a, 4);
 }
